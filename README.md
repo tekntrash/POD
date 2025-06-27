@@ -68,7 +68,7 @@ Watch a full demo of POD in action here:
 
 The POD system is designed to work with:
 
-- Datalogic Barcode Reader  
+- Datalogic Barcode Reader model 3550HSi
 - ZED Depth Camera  
 - Robotic Arm  
 - NFC Card Reader  
