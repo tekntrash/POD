@@ -38,6 +38,8 @@ import sys
 import xml.etree.ElementTree as ET
 import logging
 from evdev import InputDevice, categorize, ecodes
+import pygame
+import select
 
 def datalogic(shared_dict):
   print ("********************* STARTING DATALOGIC PROCESS *************************")
