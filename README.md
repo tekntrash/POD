@@ -41,9 +41,10 @@ POD is not just a bin—it’s a **smart device** that:
 - **Measures Weight and Temperature** to assess consumption level  
 - **Sorts Waste** into two internal bins (monitored vs. unmonitored products)
 - Uses a **touchscreen display** for user prompts and interaction
-- **Recognizes Users** via NFC card  
+- **Recognizes Users** via an NFC card
 - **Connects to the Cloud** to retrieve user and product monitoring data  
 - **Speaks to the User**, offering rewards and feedback (via USB audio)
+- **Verifies levels**, closing the single waste entry point and indicating where there is another POD available
 
 For example, if a product is disposed of mostly full, it might signal dissatisfaction. POD captures this type of actionable insight in real time.
 
@@ -78,12 +79,6 @@ The POD system is designed to work with:
 - Touchscreen Waveshare 8DP-CAPLCD
 ---
 
-## 🎬 Demo
-
-A detailed video showcasing POD’s functionality is included in this repository.  
-
----
-
 ## 💾 About This Repo
 
 This repository contains the **first release** of the POD software. We are open-sourcing it because it includes useful components for learning:
@@ -93,6 +88,7 @@ This repository contains the **first release** of the POD software. We are open-
 - Text-to-speech integration  
 - Consumption analytics logic
 - Touchscreen reading
+It does not include however routines to detect weight, temperature, etc of disposed products, databases of users/points/products/campaigns/companies, backends to verify products, rewards, users, etc of the real POD system
 
 ---
 
