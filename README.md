@@ -89,6 +89,7 @@ This repository contains the **first release** of the POD software. We are open-
 - Text-to-speech integration  
 - Consumption analytics logic
 - Touchscreen reading
+
 It does not include however routines to detect weight, temperature, etc of disposed products, databases of users/points/products/campaigns/companies, backends to verify products, rewards, users, etc of the real POD system
 
 ---
