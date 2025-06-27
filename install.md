@@ -1,5 +1,5 @@
 
-# Installation Instructions for Jetson-based YOLOv10 Environment
+# Installation Instructions for a Nvidia Jetson AGX Orin running Ubuntu 22
 
 These steps help set up an environment compatible with NVIDIA Jetson and YOLOv10.
 
@@ -96,22 +96,6 @@ pip install pandas opencv-python paramiko mysql-connector-python geocoder huggin
 pyttsx3 pyzbar nfcpy pyudev evdev adafruit-circuitpython-servokit pyyaml typing_extensions \
 numpy==1.26.1
 ```
-
----
-
-## 📷 Camera Test
-
-```bash
-gst-launch-1.0 nvarguscamerasrc sensor-id=0 ! 'video/x-raw(memory:NVMM),width=1920,height=1080' ! nvvidconv ! xvimagesink sync=false
-```
-
----
-
-## 🔍 JetCam Support
-
-See: https://github.com/NVIDIA-AI-IOT/jetcam/
-
----
 
 ## 📺 Touchscreen & Brightness
 
