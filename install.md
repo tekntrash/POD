@@ -67,18 +67,6 @@ git clone https://github.com/THU-MIG/yolov10
 
 ---
 
-## 🧱 Build Tools for Kinect
-
-```bash
-pip install Cython==0.29.36 wheel
-pip install numpy==1.26.4
-```
-
-Follow this guide to install `libfreenect`:  
-https://naman5.wordpress.com/2014/06/24/experimenting-with-kinect-using-opencv-python-and-open-kinect-libfreenect/
-
----
-
 ## 📢 Additional Libraries
 
 ```bash
