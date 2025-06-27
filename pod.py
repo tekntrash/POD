@@ -348,7 +348,7 @@ def robot(shared_dict):
       exit()
    
 def create_pool():
-    config = {"host": "34.141.192.157","user": "khalil","password": "$aski0i&/(Ks256","database": "stipra","port": 3306}
+    config = {"host": "[server]","user": "[db user]","password": "[db password]","database": "[db]","port": [db port]}
     pool = pooling.MySQLConnectionPool(pool_name="mypool", pool_size=5, **config)
     return pool
 pool = create_pool()
