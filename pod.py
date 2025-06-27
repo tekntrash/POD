@@ -1,37 +1,5 @@
 # cython: language=c++
 # coding: utf-8
-#para saber versao jetpack  apt-cache show nvidia-jetpack, que mostra 5.1.3-b29
-#0 - apt install python3.10 python3.10-dev python3.10-venv ccache apt-utils
-#1 - alias python=python3.10
-#2 - create area with commands python -m venv yolov10-env and source yolov10-env/bin/activate
-#3 - usar torch version 2.1.0a0+41361538.nv23.06 usando comando wget https://developer.download.nvidia.cn/compute/redist/jp/v512/pytorch/torch-2.1.0a0+41361538.nv23.06-cp38-cp38-linux_aarch64.whl
-#4 - if compiling torch, type first export CMAKE_CUDA_COMPILER=/usr/local/cuda-11.4/bin/nvcc and rm -rf /root/pytorch/build/
-#4 - sudo apt-get install libopenblas-base libopenmpi-dev libomp-dev
-#5 - usar torchvsion version v0.16.1 usando git clone --branch v0.16.1 https://github.com/pytorch/vision torchvision
-#6 - install yolov10 with pip install -q git+https://github.com/THU-MIG/yolov10.git e clonar https://github.com/THU-MIG/yolov10 como instruido em https://blog.roboflow.com/yolov10-how-to-train/
-#7 - install Cython==0.29.36 and pip install wheel to be able to install pylibfreenect2 and pip install numpy==1.26.4 to install freenect1
-#8 - install freenect as instructed in https://naman5.wordpress.com/2014/06/24/experimenting-with-kinect-using-opencv-python-and-open-kinect-libfreenect/
-#9 - apt install espeak libnfc-bin libnfc-examples libnfc-dev
-#10 - https://github.com/NVIDIA/jetson-gpio
-  #python -m  pip install Jetson.GPIO
-  #sudo groupadd -f -r gpio
-  #sudo usermod -a -G gpio your_user_name
-  #cp /root/yolov5-env/lib/python3.8/site-packages/Jetson/GPIO/99-gpio.rules  /etc/udev/rules.d/
-  #sudo udevadm control --reload-rules && sudo udevadm trigger
-#11 - pip install pandas opencv-python paramiko mysql-connector-python geocoder huggingface_hub pyttsx3 pyzbar nfcpy pyudev evdev adafruit-circuitpython-servokit pyyaml typing_extensions numpy==1.26.1
-#12 - https://github.com/NVIDIA-AI-IOT/jetcam/
-
-#https://pypi.org/project/torchvision/ comparison torch and torchvision e https://forums.developer.nvidia.com/t/pytorch-for-jetson/72048 onde baixar
-#torch is version 2.1.0a0+41361538.nv23.06
-#test camera with gst-launch-1.0 nvarguscamerasrc sensor-id=0 ! 'video/x-raw(memory:NVMM),width=1920,height=1080' ! nvvidconv ! xvimagesink sync=false 
-#OpenCV version as installed: 4.10.0, CUDA 11.4
-#touchscreen instructions at https://www.waveshare.com/wiki/8DP-CAPLCD and http://www.ddcutil.com/commands/
-#sudo apt-get install ddcutil -y
-#sudo ddcutil detect
-#sudo ddcutil setvcp 10 <value>
-#usar torchvision-0.20.0a0+6344041-cp310-cp310-linux_aarch64.whl e torch-2.4.0a0+f70bd71a48.nv24.06.15634931-cp310-cp310-linux_aarch64.whl
-#pip install piper-tts
-
 import serial.tools.list_ports
 import os
 import pyaudio
