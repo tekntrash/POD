@@ -1,0 +1,23 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<playBack>
+    <point>
+        <motionStyle>MOVJ</motionStyle>
+        <isGrab>true</isGrab>
+        <x>-179.983</x>
+        <y>42.5147</y>
+        <z>7.5321</z>
+        <rHead>0</rHead>
+        <gripper>0</gripper>
+        <pauseTime>0</pauseTime>
+    </point>
+    <point>
+        <motionStyle>MOVJ</motionStyle>
+        <isGrab>false</isGrab>
+        <x>30.42</x>
+        <y>-7.62939e-06</y>
+        <z>46.83</z>
+        <rHead>0</rHead>
+        <gripper>0</gripper>
+        <pauseTime>0</pauseTime>
+    </point>
+</playBack>
