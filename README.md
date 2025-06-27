@@ -1,6 +1,5 @@
 # POD - Point of Disposal  
-**A Smart Bin for Real Consumption Data**  
-Created by [TeknTrash Robotics](https://www.tekntrash.com)
+**A Smart Bin for Real Consumption Data**  created by [TeknTrash Robotics](https://www.tekntrash.com)
 
 ![POD](pod.png)
 
