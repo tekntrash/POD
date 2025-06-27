@@ -4,7 +4,7 @@ Created by [TeknTrash Robotics](https://www.tekntrash.com)
 
 ---
 
-## ðŸ” What is POD?
+## What is POD?
 
 POD (Point of Disposal) is a smart bin developed by TeknTrash Robotics that captures *actual consumption data*â€”not just sales. While Point of Sale (POS) systems tell you what was purchased, POD reveals what was truly consumed by analyzing what ends up in the trash.
 
@@ -13,7 +13,7 @@ This distinction is critical:
 
 ---
 
-## ðŸ§  Why Consumption Data Matters
+## Why Consumption Data Matters
 
 Unlike sales data, consumption data enables powerful new insights, including:
 
@@ -31,7 +31,7 @@ Unlike sales data, consumption data enables powerful new insights, including:
 
 ---
 
-## ðŸ—‘ï¸ How POD Works
+## How POD Works
 
 POD is not just a binâ€”itâ€™s a **smart device** that:
 
@@ -47,7 +47,7 @@ For example, if a product is disposed of mostly full, it might signal dissatisfa
 
 ---
 
-## ðŸŽ Rewarding Consumers
+## Rewarding Consumers
 
 POD supports reward systems by integrating with [ProduTrak](https://www.produtrak.com), a data platform that:
 
@@ -57,9 +57,9 @@ POD supports reward systems by integrating with [ProduTrak](https://www.produtra
 
 ---
 
-## ðŸ§° Hardware Requirements
+## Hardware Requirements
 
-The POD system is designed to work with:
+In this repo, the POD system is designed to work with:
 
 - Datalogic Barcode Reader  
 - ZED Depth Camera  
@@ -69,13 +69,13 @@ The POD system is designed to work with:
 
 ---
 
-## ðŸŽ¬ Demo
+## Demo
 
 A detailed video showcasing PODâ€™s functionality is included in this repository.  
 
 ---
 
-## ðŸ’¾ About This Repo
+## About This Repo
 
 This repository contains the **first release** of the POD software. We are open-sourcing it because it includes useful components such as:
 
@@ -87,12 +87,12 @@ This repository contains the **first release** of the POD software. We are open-
 
 ---
 
-## ðŸ§ª Get Involved
+## Get Involved
 
 We welcome contributions, feedback, and ideas to improve POD. If you're interested in using POD in your smart city, waste management, or FMCG data initiativesâ€”letâ€™s talk.
 
 ---
 
-## ðŸ“œ License
+## License
 
 This project is released under the MIT License. See `LICENSE` for details.
