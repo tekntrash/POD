@@ -45,6 +45,7 @@ POD is not just a bin—it’s a **smart device** that:
 - **Connects to the Cloud** to retrieve user and product monitoring data  
 - **Speaks to the User**, offering rewards and feedback (via USB audio)
 - **Verifies levels**, closing the single waste entry point and indicating where there is another POD available
+- **Geolocated**, POD is supposed to work as a networked device and to that end it is geolocated. This allows it to point to another POD when full
 
 For example, if a product is disposed of mostly full, it might signal dissatisfaction. POD captures this type of actionable insight in real time.
 
