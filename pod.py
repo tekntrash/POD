@@ -15,7 +15,6 @@ import cv2
 import sys
 import pandas
 from plumbum import SshMachine
-
 import socket
 import secrets
 import mysql.connector as mariadb
@@ -29,8 +28,6 @@ import time
 #from ultralytics import YOLOv10
 from ultralytics import YOLO
 #import pyttsx3
-#import freenect
-#from pyzbar.pyzbar import decode 
 import evdev
 from evdev import InputDevice, categorize, ecodes
 from pyzbar import pyzbar
@@ -166,7 +163,7 @@ def zed(shared_dict):
                 if shared_dict['moveto'] ==0:
                   print ("RIGHT: will process product with label "+shared_dict['label'])
                   shared_dict['label']=class_idright
-                  shared_dict['barcode']="5017007603276"
+                  shared_dict['barcode']="[insert generic barcode here]"
                   shared_dict['method']="a"
                   shared_dict['moveto']=1
     else:
@@ -381,14 +378,14 @@ def processpoints(shared_dict,lock):
   print ("********************* STARTING PROCESSPOINTS PROCESS *************************")
   os.nice(-19) 
   print(f"Running process processpoints with niceness: {os.nice(0)} and pid {os.getpid()}")
-  host = "34.34.110.132"
-  user = "root"
-  password = "*(hjkj%67ASDFA@#$%11"
+  host = "[server]"
+  user = "[username]"
+  password = "[password]"
   while True:
     if shared_dict['processa']==1:
       exit()
       shared_dict['text']="Wait to see how many points you were awarded"
-      command="/root/anaconda3/bin/python /var/www/html/stipra.com/api/newapp/processbin.py "+shared_dict['videofilename']
+      command="[procedure_to_be_run]"+shared_dict['videofilename']
       print ("Connecting with server with command ",command)
       socket.setdefaulttimeout(30)
       with lock:
@@ -418,7 +415,7 @@ def login(shared_dict):
   print(f"Running process login with niceness: {os.nice(0)} and pid {os.getpid()}")
   while True:
     if shared_dict['userid']!=0 and shared_dict['loggedin']==0:
-      shared_dict['userid']=24326
+      shared_dict['userid']=[user_read]
       print("Checking user with id "+str(shared_dict['userid']))
       db_connection = pool.get_connection()
       cursor_users = db_connection.cursor(buffered=False)
@@ -555,8 +552,6 @@ def init():
   processbarcode_process.join()
 
 if __name__ == "__main__":
-  #print(sd.query_devices())
-  #exit()
   logging.basicConfig(level=logging.DEBUG)
   mp.set_start_method('spawn')
   current_method = mp.get_start_method()
