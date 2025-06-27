@@ -10,7 +10,6 @@ These steps help set up an environment compatible with NVIDIA Jetson and YOLOv10
 ```bash
 sudo apt update
 sudo apt install python3.10 python3.10-dev python3.10-venv ccache apt-utils
-```
 
 ---
 
@@ -20,8 +19,8 @@ sudo apt install python3.10 python3.10-dev python3.10-venv ccache apt-utils
 alias python=python3.10
 python -m venv yolov10-env
 source yolov10-env/bin/activate
+pip install -r requirements.txt
 ```
-
 ---
 
 ## 🔥 PyTorch & TorchVision (Jetson-Compatible)
@@ -99,18 +98,9 @@ Brightness control using `ddcutil`:
 sudo apt-get install ddcutil -y
 sudo ddcutil detect
 sudo ddcutil setvcp 10 <value>  # Replace <value> with brightness level
-```
-
-## 🗣️ Text-to-Speech
-
-```bash
-pip install piper-tts
-```
-
 ---
 
 ## 📝 Notes
-
 - Compare PyTorch/TorchVision builds: https://pypi.org/project/torchvision/
 - NVIDIA's Jetson PyTorch builds: https://forums.developer.nvidia.com/t/pytorch-for-jetson/72048
 
