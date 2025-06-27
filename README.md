@@ -71,7 +71,7 @@ The POD system is designed to work with:
 
 - Datalogic Barcode Reader 3550HSi
 - ZED Depth Camera 
-- Robotic Arm Dobot
+- Robotic Arm Dobot V1
 - Generic NFC Card Reader  
 - Generic USB Audio Output Device  
 - Touchscreen Waveshare 8DP-CAPLCD
@@ -85,8 +85,7 @@ A detailed video showcasing POD’s functionality is included in this repository
 
 ## 💾 About This Repo
 
-This repository contains the **first release** of the POD software. We are open-sourcing it because it includes useful components such as:
-
+This repository contains the **first release** of the POD software. We are open-sourcing it because it includes useful components for learning:
 - Barcode identification  
 - Robotic control  
 - NFC card reading  
