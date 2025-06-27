@@ -109,17 +109,6 @@ sudo ddcutil detect
 sudo ddcutil setvcp 10 <value>  # Replace <value> with brightness level
 ```
 
----
-
-## 🧪 Alternate Torch/Torchvision Builds
-
-```bash
-pip install torchvision-0.20.0a0+6344041-cp310-cp310-linux_aarch64.whl
-pip install torch-2.4.0a0+f70bd71a48.nv24.06.15634931-cp310-cp310-linux_aarch64.whl
-```
-
----
-
 ## 🗣️ Text-to-Speech
 
 ```bash
