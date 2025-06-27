@@ -1,5 +1,5 @@
 
-# Installation Instructions for a Nvidia Jetson AGX Orin running Ubuntu 22
+# Installation Instructions for a Nvidia Jetson AGX Orin running Ubuntu 22 and CUDA 11.4
 
 These steps help set up an environment compatible with NVIDIA Jetson and YOLOv10.
 
