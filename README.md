@@ -62,6 +62,8 @@ POD supports reward systems by integrating with [ProduTrak](https://www.produtra
 Watch a full demo of POD in action here:  
 👉 [POD.mp4 on GitHub](https://github.com/tekntrash/POD/blob/main/POD.mp4)
 
+---
+
 ## 🧰 Hardware Requirements
 
 The POD system is designed to work with:
