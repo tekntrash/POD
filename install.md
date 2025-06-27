@@ -5,14 +5,6 @@ These steps help set up an environment compatible with NVIDIA Jetson and YOLOv10
 
 ---
 
-## 💡 Check JetPack Version
-
-```bash
-apt-cache show nvidia-jetpack  # Example output: 5.1.3-b29
-```
-
----
-
 ## 🔧 System Dependencies
 
 ```bash
