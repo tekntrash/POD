@@ -488,17 +488,88 @@ def touchscreen(shared_dict):
   print ("********************* STARTING TOUCHSCREEN PROCESS *************************")
   os.nice(0) 
   print(f"Running process card with niceness: {os.nice(0)} and pid {os.getpid()}")
-  # Replace this with your actual event device path
-  device_path = '/dev/input/event7'  
-  dev = InputDevice(device_path)
-  print(f"Listening for events on: {dev.path} ({dev.name})")
-  for event in dev.read_loop():
-    if event.type == ecodes.EV_ABS:
-        absevent = categorize(event)
-        print(f"ABS event code={absevent.event.code} value={absevent.event.value}")
-    elif event.type == ecodes.EV_KEY:
-        keyevent = categorize(event)
-        print(f"KEY event code={keyevent.keycode} value={keyevent.event.value}")
+  # --- Find Waveshare touchscreen directly ---
+  touchscreen = None
+  devices = [InputDevice(fn) for fn in list_devices()]
+  for dev in devices:
+    if "waveshare" in dev.name.lower():
+        print(f"[INFO] Found touchscreen: {dev.name} at {dev.path}")
+        touchscreen = dev
+        break
+  if not touchscreen:
+    print("[ERROR] No Waveshare touchscreen detected. Exiting.")
+    sys.exit(1)
+
+  # --- Pygame setup ---
+  pygame.init()
+  WIDTH, HEIGHT = 800, 480
+  screen = pygame.display.set_mode((WIDTH, HEIGHT))
+  pygame.display.set_caption("Point of Disposal Menu")
+  font_title = pygame.font.SysFont(None, 70)
+  font_button = pygame.font.SysFont(None, 50)
+  clock = pygame.time.Clock()
+
+  # --- Buttons ---
+  buttons = ["Dispose now","Check rewards","Register","Know more!"]
+  button_rects = []
+  spacing = 20
+  btn_width, btn_height = 400, 70
+  start_y = 150
+  for i, text in enumerate(buttons):
+    x = (WIDTH - btn_width) // 2
+    y = start_y + i * (btn_height + spacing)
+    button_rects.append(pygame.Rect(x, y, btn_width, btn_height))
+
+  finger_x, finger_y = WIDTH // 2, HEIGHT // 2
+  finger_down = False
+
+  # --- Main loop ---
+  while True:
+    # Handle window events
+    for event in pygame.event.get():
+        if event.type == pygame.QUIT:
+            pygame.quit()
+            sys.exit(0)
+        elif event.type == pygame.KEYDOWN and event.key == pygame.K_ESCAPE:
+            pygame.quit()
+            sys.exit(0)
+    # Read touchscreen events
+    r, w, e = select.select([touchscreen.fd], [], [], 0)
+    if touchscreen.fd in r:
+        for event in touchscreen.read():
+            if event.type == ecodes.EV_ABS:
+                if event.code in [ecodes.ABS_MT_POSITION_X, ecodes.ABS_X]:
+                    finger_x = event.value
+                elif event.code in [ecodes.ABS_MT_POSITION_Y, ecodes.ABS_Y]:
+                    finger_y = event.value
+            elif event.type == ecodes.EV_KEY and event.code == ecodes.BTN_TOUCH:
+                finger_down = event.value == 1
+                if not finger_down:  # On finger release
+                    for idx, rect in enumerate(button_rects):
+                        if rect.collidepoint(finger_x, finger_y):
+                            print(f"[INFO] Button tapped: {buttons[idx]}")
+
+    # Draw background
+    screen.fill((30, 30, 30))
+    # Draw title
+    title_surf = font_title.render("Point of Disposal (POD)", True, (255, 255, 255))
+    screen.blit(title_surf, ((WIDTH - title_surf.get_width()) // 2, 40))
+    # Draw buttons
+    for i, rect in enumerate(button_rects):
+        color = (70, 70, 70)
+        if rect.collidepoint(finger_x, finger_y) and finger_down:
+            color = (100, 0, 0)
+        pygame.draw.rect(screen, color, rect, border_radius=10)
+        text_surf = font_button.render(buttons[i], True, (255, 255, 255))
+        screen.blit(
+            text_surf,
+            (
+                rect.x + (rect.width - text_surf.get_width()) // 2,
+                rect.y + (rect.height - text_surf.get_height()) // 2,
+            ),
+        )
+    pygame.display.flip()
+    clock.tick(60)
 
 def init():
   lock = Lock()  
