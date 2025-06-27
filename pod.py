@@ -27,16 +27,14 @@ import datetime
 import time
 #from ultralytics import YOLOv10
 from ultralytics import YOLO
-#import pyttsx3
 import evdev
 from evdev import InputDevice, categorize, ecodes
-from pyzbar import pyzbar
 from datetime import datetime
 import serial
 import time
 import struct
 import signal
-import sys  # Added sys import
+import sys
 import xml.etree.ElementTree as ET
 import logging
 
@@ -163,7 +161,7 @@ def zed(shared_dict):
                 if shared_dict['moveto'] ==0:
                   print ("RIGHT: will process product with label "+shared_dict['label'])
                   shared_dict['label']=class_idright
-                  shared_dict['barcode']="[insert generic barcode here]"
+                  shared_dict['barcode']="[detected barcode]"
                   shared_dict['method']="a"
                   shared_dict['moveto']=1
     else:
