@@ -37,6 +37,7 @@ import signal
 import sys
 import xml.etree.ElementTree as ET
 import logging
+from evdev import InputDevice, categorize, ecodes
 
 def datalogic(shared_dict):
   print ("********************* STARTING DATALOGIC PROCESS *************************")
@@ -483,6 +484,22 @@ def card(shared_dict):
               shared_dict['userid']=int(nfc_code)
             nfc_code = ""
 
+def touchscreen(shared_dict):
+  print ("********************* STARTING TOUCHSCREEN PROCESS *************************")
+  os.nice(0) 
+  print(f"Running process card with niceness: {os.nice(0)} and pid {os.getpid()}")
+  # Replace this with your actual event device path
+  device_path = '/dev/input/event7'  
+  dev = InputDevice(device_path)
+  print(f"Listening for events on: {dev.path} ({dev.name})")
+  for event in dev.read_loop():
+    if event.type == ecodes.EV_ABS:
+        absevent = categorize(event)
+        print(f"ABS event code={absevent.event.code} value={absevent.event.value}")
+    elif event.type == ecodes.EV_KEY:
+        keyevent = categorize(event)
+        print(f"KEY event code={keyevent.keycode} value={keyevent.event.value}")
+
 def init():
   lock = Lock()  
   ipnumero = socket.gethostbyname(socket.gethostname())
@@ -530,6 +547,7 @@ def init():
   speak_process = mp.Process(target=speak, args=(shared_dict,))
   login_process = mp.Process(target=login, args=(shared_dict,))
   processbarcode_process = mp.Process(target=processbarcode, args=(shared_dict,))
+  touchscreen_process=mp.Process(target=touchscreen, args=(shared_dict,))
 
   processpoints_process.start()
   robot_process.start()
@@ -539,6 +557,7 @@ def init():
   speak_process.start()
   login_process.start()
   processbarcode_process.start()
+  touchscreen_process.start()
   
   processpoints_process.join()
   robot_process.join()
@@ -548,11 +567,11 @@ def init():
   speak_process.join()
   login_process.join()
   processbarcode_process.join()
+  touchscreen_process.join()
 
 if __name__ == "__main__":
   logging.basicConfig(level=logging.DEBUG)
   mp.set_start_method('spawn')
   current_method = mp.get_start_method()
   print(f"Current start method: {current_method}")
-  print(f"OpenCV version: {cv2.__version__}")
   init()
