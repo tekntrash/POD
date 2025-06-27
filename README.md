@@ -2,6 +2,8 @@
 **A Smart Bin for Real Consumption Data**  
 Created by [TeknTrash Robotics](https://www.tekntrash.com)
 
+![POD](pod.png)
+
 ---
 
 ## 🔍 What is POD?
