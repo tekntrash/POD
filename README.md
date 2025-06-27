@@ -103,7 +103,7 @@ We welcome contributions, feedback, and ideas to improve POD. If you're interest
 
 ## 📜 License
 
-This project is released under the MIT License. See `LICENSE` for details.
+This project is released under the MIT License. See [LICENSE](https://github.com/tekntrash/POD/blob/main/LICENSE) for details.
 
 
 ## Installation
