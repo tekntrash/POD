@@ -62,10 +62,6 @@ POD supports reward systems by integrating with [ProduTrak](https://www.produtra
 
 Watch a full demo of POD in action here:  
 👉 [POD.mp4 on GitHub](https://github.com/tekntrash/POD/blob/main/POD.mp4)
-<video width="640" height="480" controls>
-  <source src="./POD.mp4" type="video/mp4">
-  Your browser does not support the video tag.
-</video>
 
 ---
 
