@@ -38,7 +38,8 @@ POD is not just a bin—it’s a **smart device** that:
 - **Scans Barcodes** using a Datalogic reader  
 - **Identifies Objects** by shape with a ZED depth camera  
 - **Measures Weight and Temperature** to assess consumption level  
-- **Sorts Waste** into two internal bins (monitored vs. unmonitored products)  
+- **Sorts Waste** into two internal bins (monitored vs. unmonitored products)
+- Uses a **touchscreen display** for user prompts and interaction
 - **Recognizes Users** via NFC card  
 - **Connects to the Cloud** to retrieve user and product monitoring data  
 - **Speaks to the User**, offering rewards and feedback (via USB audio)
@@ -90,7 +91,8 @@ This repository contains the **first release** of the POD software. We are open-
 - Robotic control  
 - NFC card reading  
 - Text-to-speech integration  
-- Consumption analytics logic  
+- Consumption analytics logic
+- Touchscreen reading
 
 ---
 
@@ -103,3 +105,8 @@ We welcome contributions, feedback, and ideas to improve POD. If you're interest
 ## 📜 License
 
 This project is released under the MIT License. See `LICENSE` for details.
+
+
+## Installation
+
+See [install.md](install.md) for complete setup instructions.
