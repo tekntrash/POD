@@ -105,7 +105,8 @@ We welcome contributions, feedback, and ideas to improve POD. If you're interest
 
 This project is released under the MIT License. See [LICENSE](https://github.com/tekntrash/POD/blob/main/LICENSE) for details.
 
+---
 
-## Installation
+## 💾 Installation
 
 See [install.md](install.md) for complete setup instructions.
