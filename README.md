@@ -97,7 +97,7 @@ This repository contains the **first release** of the POD software. We are open-
 
 ## 🧪 Get Involved
 
-We welcome contributions, feedback, and ideas to improve POD. If you're interested in using POD in your smart city, waste management, or FMCG data initiatives—let’s talk.
+We welcome contributions, feedback, and ideas to improve POD. If you're interested in using POD in your smart city, waste management, or FMCG data initiatives send an email to info@tekntrash.com
 
 ---
 
